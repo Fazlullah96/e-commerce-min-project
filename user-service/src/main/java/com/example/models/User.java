@@ -29,6 +29,7 @@ public class User {
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;
+    private Boolean isActive;
 
 
     public enum Role{

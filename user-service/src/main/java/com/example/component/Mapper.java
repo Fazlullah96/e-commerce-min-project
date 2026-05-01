@@ -23,6 +23,7 @@ public class Mapper {
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .role(request.getRole())
+                .isActive(request.getIsActive())
                 .build();
     }
 }

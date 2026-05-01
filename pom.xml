@@ -11,6 +11,9 @@
     <modules>
         <module>eureka-server</module>
         <module>user-service</module>
+        <module>api-gateway</module>
+        <module>product-service</module>
+        <module>order-service</module>
     </modules>
 
     <parent>

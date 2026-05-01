@@ -27,4 +27,21 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(error, HttpStatus.ALREADY_REPORTED);
     }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ErrorMessage> userNotFoundException(
+            UserNotFoundException ex,
+            HttpServletRequest request
+    ){
+        ErrorMessage error = ErrorMessage
+                .builder()
+                .timeStamp(LocalDateTime.now())
+                .status(HttpStatus.NOT_FOUND.value())
+                .error(HttpStatus.NOT_FOUND.getReasonPhrase())
+                .path(request.getRequestURI())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
 }
